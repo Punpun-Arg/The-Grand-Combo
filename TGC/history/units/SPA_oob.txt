@@ -126,8 +126,21 @@ RUS = { value = 0 }
 
 #Army
 army = {
-	name = "Guardia Real de España"
-	location = 487
+	name = "Ejírcito del Centro"
+	leader = {
+		name = "Narvíez"
+		date = 1836.1.1
+		type = land
+		personality = efficient
+		background = powerful_friends
+		prestige = 0.0
+	}
+	location = 495
+	regiment = {
+		name = "1. Brigada de Infantería 'El Ramillete'"
+		type = hussar
+		home = 503
+	}
 	regiment = {
 		name = "1. Guardia Real"
 		type = guard
@@ -150,67 +163,43 @@ army = {
 	}
 	regiment = {
 		name = "5. Guardia Real"
-		type = guard
+		type = artillery
 		home = 487
-	}
-}
-army = {
-	name = "Ejército del Centro"
-	leader = {
-		name = "Narváez"
-		date = 1836.1.1
-		type = land
-		personality = efficient
-		background = powerful_friends
-		prestige = 0.0
-	}
-	location = 495
-	regiment = {
-		name = "1. Brigada de Infantería 'El Ramillete'"
-		type = infantry
-		home = 503
 	}
 	regiment = {
 		name = "2. Brigada de Infantería"
-		type = infantry
+		type = artillery
 		home = 503
 	}
 	regiment = {
 		name = "3. Brigada de Infantería"
-		type = infantry
+		type = artillery
 		home = 503
-	}
-}
-army = {
-	name = "División del Norte"
-	location = 492
-	regiment = {
-		name = "1. Brigada de Ingenieros"
-		type = engineer
-		home = 487
 	}
 	regiment = {
 		name = "4. Brigada de Infantería"
-		type = infantry
+		type = artillery
 		home = 492
 	}
 	regiment = {
 		name = "5. Brigada de Infantería"
-		type = infantry
+		type = artillery
 		home = 492
 	}
-	regiment = {
-		name = "6. Brigada de Infantería"
-		type = infantry
-		home = 493
-	}
 }
+
 army = {
-	name = "Ejército del Noreste"
+	name = "Ejírcito del Noreste"
 	location = 498
 	regiment = {
+		name = "11. Brigada de Infantería"
+		type = hussar
+		home = 497
+	}
+
+	regiment = {
 		name = "7. Brigada de Infantería 'San Jorge'"
-		type = infantry
+		type = guard
 		home = 498
 	}
 	regiment = {
@@ -223,43 +212,44 @@ army = {
 		type = infantry
 		home = 482
 	}
-
 	regiment = {
 		name = "10. Brigada de Infantería 'La Granja'"
 		type = infantry
 		home = 483
 	}
 	regiment = {
-		name = "11. Brigada de Infantería"
-		type = infantry
-		home = 497
+		name = "6. Brigada de Infantería"
+		type = engineer
+		home = 1457
 	}
-}
-army = {
-	name = "Reserva de Valencia"
-	location = 503
+	regiment = {
+		name = "1. Brigada de Ingenieros"
+		type = artillery
+		home = 487
+	}
 	regiment = {
 		name = "12. Brigada de Infantería"
-		type = infantry
-		home = 503
+		type = artillery
+		home = 1456
 	}
 	regiment = {
 		name = "13. Brigada de Infantería"
-		type = infantry
+		type = artillery
 		home = 477
 	}
+	regiment = {
+		name = "14. Brigada de Infantería"
+		type = artillery
+		home = 512
+	}
 }
+
 army = {
 	name = "Reserva del Sur"
 	location = 509
 	regiment = {
-		name = "14. Brigada de Infantería"
-		type = infantry
-		home = 512
-	}
-	regiment = {
 		name = "15. Brigada de Infantería"
-		type = infantry
+		type = hussar
 		home = 514
 	}
 	regiment = {
@@ -284,61 +274,31 @@ army = {
 	}
 	regiment = {
 		name = "20. Brigada de Infantería"
-		type = infantry
+		type = artillery
 		home = 488
 	}
 	regiment = {
 		name = "1. Granaderos del Rey"
-		type = cuirassier
+		type = artillery
 		home = 513
 	}
 	regiment = {
 		name = "2. Granaderos del Rey"
-		type = cuirassier
+		type = artillery
 		home = 513
 	}
-}
-#Armies disabled because they messed with troop-spawn in Europe (made units fail to spawn)
-#army = {
-#	name = "Ejército de Cuba"
-#	location = 2209
-#
-#	regiment = {
-#		name = "1. Brigada Colonial"
-#		type = infantry
-#		home = 474
-#	}
-#}
-#army = {
-#	name = "Ejército de Puerto Rico"
-#	location = 2222
-#
-#	regiment = {
-#		name = "2. Brigada Colonial"
-#		type = infantry
-#		home = 475
-#	}
-#}
-army = {
-	name = "Ejército de Filipinas"
-	location = 1455
-
+	regiment = {
+		name = "2. Brigada Colonial"
+		type = artillery
+		home = 475
+	}
 	regiment = {
 		name = "1. Brigada Colonial"
-		type = infantry
+		type = artillery
 		home = 1455
 	}
 }
-army = {
-	name = "Ejército de Mindanao"
-	location = 1463
 
-	regiment = {
-		name = "2. Brigada Colonial"
-		type = infantry
-		home = 1463
-	}
-}
 navy = {
 	name = "Armada de Cuba"
 	location = 2212

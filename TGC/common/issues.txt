@@ -654,7 +654,7 @@ party_issues = {
 				}
 			}
 
-			all_voting_pops = {
+			all_voting_pops = { #these should bbe turned into specifically voting reforms
 				rules = { all_voting = yes }
 				non_accepted_pop_militancy_modifier = -0.01
 				global_assimilation_rate = -0.2
@@ -777,10 +777,8 @@ party_issues = {
 			settlement = {
 				global_assimilation_rate = 0.075
 				global_immigrant_attract = 0.015
-				supply_consumption = 0.05
-				tax_efficiency = -0.03
-				non_accepted_pop_consciousness_modifier = 0.05
-				non_accepted_pop_militancy_modifier = 0.05
+				non_accepted_pop_consciousness_modifier = 0.06 #this might need some looking into, as we can't place colony only militancy, this affects non acc cultures in state/core territory as well
+				non_accepted_pop_militancy_modifier = 0.06
 				core_pop_militancy_modifier = -0.03
 				core_pop_consciousness_modifier = -0.03
 				administrative_multiplier = 1
@@ -792,12 +790,8 @@ party_issues = {
 			}
 
 			exploitation = {
-				prestige = 0.1
-				tax_efficiency = 0.03
-				supply_consumption = 0.05
 				non_accepted_pop_militancy_modifier = -0.05
-				navy_tech_research_bonus = 0.05
-				suppression_points_modifier = 0.25
+				suppression_points_modifier = 0.10
 				administrative_multiplier = 1
 				badboy = -0.05
 				allow = {
@@ -807,10 +801,9 @@ party_issues = {
 			}
 
 			civilizing = {
-				prestige = 0.1
+				prestige = 0.2
 				global_assimilation_rate = 0.1
 				education_efficiency_modifier = 0.1
-				culture_tech_research_bonus = 0.05
 				administrative_multiplier = 1
 				badboy = -0.05
 				allow = {
@@ -825,9 +818,7 @@ party_issues = {
 			}
 
 			no_colonies = {
-				supply_consumption = -0.05
-				navy_tech_research_bonus = -0.05
-				army_tech_research_bonus = 0.05
+				prestige = -0.2
 				allow = {
 					colonial_nation = no
 					NOT = { has_country_flag = pol_reform_blocker }
@@ -837,43 +828,17 @@ party_issues = {
 
 		centralization = {
 
-			totalitarianism = {
-				global_immigrant_attract = -1
-				global_assimilation_rate = 0.05
-				tax_efficiency = 0.05
-				mobilisation_size = 0.05
-				cb_generation_speed_modifier = 0.25
-				badboy = 0.005
-				suppression_points_modifier = 0.2
-				allow = {
-					NOT = { has_country_flag = pol_reform_blocker }
-					has_global_flag = revolution_n_counter_researched
-					OR = {
-						has_country_flag = communist_gov
-						has_country_flag = fascist_gov
-						AND = {
-							ruling_party_ideology = reactionary
-							OR = {
-								has_country_flag = clean_up_colonial_government
-								has_country_flag = absolute_monarchy_gov
-								has_country_flag = presidential_dictatorship_gov
-								has_country_flag = theocratic_government
-							}
-						}
-					}
-				}
-			}
-
 			confederalism = {
-				global_assimilation_rate = -0.05
+				administrative_efficiency_modifier = -0.05
+				administrative_multiplier = -3
+				global_assimilation_rate = -0.10
 				global_pop_militancy_modifier = -0.05
 				tax_efficiency = -0.05
 				diplomatic_points_modifier = -0.05
 				suppression_points_modifier = -0.30
 				leadership_modifier = -0.05
-				administrative_efficiency_modifier = -0.05
-				mobilisation_size = -0.01
-				cb_generation_speed_modifier = -0.15
+				mobilisation_size = -0.05
+				cb_generation_speed_modifier = -1.0
 				supply_consumption = -0.1
 				allow = {
 					NOT = { has_country_flag = pol_reform_blocker }
@@ -891,15 +856,15 @@ party_issues = {
 					}
 				}
 			}
-
 			regionalism = {
-				tax_efficiency = -0.02
+				administrative_efficiency_modifier = -0.02
+				administrative_multiplier = -1
 				global_assimilation_rate = -0.05
-				administrative_efficiency_modifier = -0.03
-				leadership_modifier = -0.1
-				diplomatic_points_modifier = -0.1
-				cb_generation_speed_modifier = -0.05
-				mobilisation_size = -0.01
+				global_pop_militancy_modifier = -0.02
+				tax_efficiency = -0.02
+				diplomatic_points_modifier = -0.02
+				mobilisation_size = -0.02
+				cb_generation_speed_modifier = -0.5
 				allow = {
 					NOT = { has_country_flag = pol_reform_blocker }
 					number_of_states = 2
@@ -913,8 +878,10 @@ party_issues = {
 			}
 
 			federalism = {
+				administrative_multiplier = 2
+				tax_efficiency = 0.02
 				leadership_modifier = 0.05
-				core_pop_militancy_modifier = -0.05
+				mobilisation_size = 0.01
 				allow = {
 					NOT = { has_country_flag = pol_reform_blocker }
 					number_of_states = 2
@@ -926,9 +893,13 @@ party_issues = {
 			}
 
 			unitary = {
+				administrative_multiplier = 0.05
+				global_assimilation_rate = 0.05
+				tax_efficiency = 0.05
+				suppression_points_modifier = 0.10
 				leadership_modifier = 0.05
-				administrative_efficiency_modifier = 0.05
-				tax_efficiency = 0.01
+				mobilisation_size = 0.02
+				cb_generation_speed_modifier = 0.15
 				allow = {
 					NOT = { has_country_flag = pol_reform_blocker }
 					has_global_flag = revolution_n_counter_researched
@@ -938,6 +909,34 @@ party_issues = {
 						has_country_flag = france
 					}
 					NOT = { has_country_flag = dual_monarchy }
+				}
+			}
+			totalitarianism = {
+				administrative_multiplier = 10
+				global_immigrant_attract = -1
+				global_assimilation_rate = 0.15
+				tax_efficiency = 0.10
+				mobilisation_size = 0.05
+				cb_generation_speed_modifier = 0.25
+				badboy = 0.005
+				suppression_points_modifier = 0.5
+				pop_militancy_modifier = 0.03
+				allow = {
+					NOT = { has_country_flag = pol_reform_blocker }
+					has_global_flag = revolution_n_counter_researched
+					OR = {
+						has_country_flag = communist_gov
+						has_country_flag = fascist_gov
+						AND = {
+							ruling_party_ideology = reactionary
+							OR = {
+								has_country_flag = clean_up_colonial_government
+								has_country_flag = absolute_monarchy_gov
+								has_country_flag = presidential_dictatorship_gov
+								has_country_flag = theocratic_government
+							}
+						}
+					}
 				}
 			}
 		}
@@ -1295,20 +1294,21 @@ party_issues = {
 			capital_punishment = {
 				core_pop_militancy_modifier = -0.01
 				suppression_points_modifier = 0.25
+				administrative_multiplier = 1
 				allow = {
 					NOT = { has_country_flag = soc_reform_blocker }
 				}
 			}
 
 			colonial_transportation = {
-				administrative_multiplier = 1
+				administrative_multiplier = 2
 				allow = {
 					NOT = { has_country_flag = soc_reform_blocker }
 				}
 			}
 
 			incarceration = {
-				administrative_multiplier = 1
+				administrative_multiplier = 2
 				allow = {
 					NOT = { has_country_flag = soc_reform_blocker }
 				}
@@ -1318,7 +1318,7 @@ party_issues = {
 				global_immigrant_attract = 0.02
 				global_assimilation_rate = 0.02
 				suppression_points_modifier = -0.2
-				administrative_multiplier = 2
+				administrative_multiplier = 3
 				allow = {
 					NOT = { has_country_flag = soc_reform_blocker }
 				}
